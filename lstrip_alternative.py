@@ -13,9 +13,22 @@ def count_space(msg):
     #maangas
     return name[space:]
 
+def ask_quit():
+    while True:
+        ask_user = input("Do you wish to exit the program? (Y/N)").strip().lower()
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else:
+            print("Invalid Input")
 
-#Ask the user to input name with leading spaces
-name = count_space("Enter Name: ")
+try_again = True
+while try_again:
+    #Ask the user to input name with leading spaces
+    name = count_space("Enter Name: ")
 
-#print name without spaces
-print(name)
+    #print name without spaces
+    print(name)
+    
+    try_again = ask_quit()
