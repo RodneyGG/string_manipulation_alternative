@@ -27,4 +27,5 @@ word = input("Enter Word: ")
 desired_adjust = valid_num("Enter desired adjust: ")
 
 #print word with the desired adjust
-print(make_space(word, desired_adjust))
+left_justify = make_space(word, desired_adjust) 
+print(left_justify)
