@@ -7,10 +7,15 @@ Create a program that do the same functionality without using count() function.
 text = input("Enter Text: ")
 #ask user to input character or word it like to count
 parameter = input("What character or word would you like to count?\n")
-#initialize count
+
+#initialize variables
 count = 0
-for i in range(len(text) - len(parameter) + 1):
+text_length = len(text)
+param_length = len(parameter)
+
+for i in range(text_length - param_length + 1):
     if text[i:i+len(parameter)] == parameter:
         count += 1 
+        
 #print the count
 print(count)
