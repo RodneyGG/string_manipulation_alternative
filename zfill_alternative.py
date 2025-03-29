@@ -5,5 +5,14 @@ Create a program that do the same functionality without using zfill() function.
 """
 
 #ask user to input words or numbers
+characters = input("Enter Words or Number: ")
 #ask user to input a parameter
+parameter = int(input("Enter parameter: "))
 #print words or number with leading 0
+if len(characters) >= parameter:
+    print(characters)
+else:
+    result = ""
+    zero = "0" * (parameter - len(characters))
+    result += (zero + characters)
+    print(result)
