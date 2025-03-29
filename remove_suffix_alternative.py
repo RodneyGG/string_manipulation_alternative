@@ -3,15 +3,31 @@ Prog02. removesuffix() remove the characters at the end of the string that match
 Create a program that do the same functionality without using removesuffix() function.
 """
 
-#ask the user to input a word
-word = input("Enter Word: ")
+#make a function ask the user to quit
+def ask_quit():
+    while True:
+        ask_user = input("Do you wish to exit the program? (Y/N)").lower().strip()
+        if ask_user in ("y", "yes"):
+            return False
+        elif ask_user in ("n", "no"):
+            return True
+        else:
+            print("Invalid Input")
 
-#ask the user to input a suffix
-suffix = input("Enter Suffix: ")
+try_again = True
+while try_again:
+    #ask the user to input a word
+    word = input("Enter Word: ")
 
-#remove the suffix
-if word[-len(suffix):] == suffix:
-    word = word[:-len(suffix)]
+    #ask the user to input a suffix
+    suffix = input("Enter Suffix: ")
 
-#print the word without suffix
-print(word)
+    #remove the suffix
+    if word[-len(suffix):] == suffix:
+        word = word[:-len(suffix)]
+
+    #print the word without suffix
+    print(word)
+    
+    #ask the user to quit 
+    try_again = ask_quit()
