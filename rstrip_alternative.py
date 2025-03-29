@@ -24,7 +24,7 @@ while try_again:
 
     #count the spaces
     space = 0
-    while space < len(reversed_word) and reversed_word[space] is " ":
+    while space < len(reversed_word) and reversed_word[space] == " ":
         space += 1
     #remove the spaces
     no_space = reversed_word[space:]
